@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpc>
+    <metainfo>
+        <titulo>TPC1 - Criação de site html com tema o tema Japão</titulo>
+        <data> 22/02/2022 </data>
+        <autor> Rosa Inês Carvalho Marinho - PG47625</autor>
+        <uc> RPCW </uc>
+    </metainfo>
+     <resumo> 
+        O presente trabalho trata-se de um website sobre o Japão, onde possui uma breve descrição sobre o mesmo, as principais cidades recomendadas e outras a visitar. 
+    </resumo>
+</tpc>
+
+
