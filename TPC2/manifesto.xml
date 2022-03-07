@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC2 - Criação de servidor e pagina html apartir de um dataset </titulo>
+        <data> 2022-03-08 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, foi fornecido um dataset no formato JSON relativo a filmes, com o objectivo de o processar e criar uma pagina
+        html funcional, para cada um dos registos, a correr em cima de um servidor de nodejs.</p>
+        <p>O processamento do dataset foi criado através de um script em python que lê o ficheiro, retira a informação necessária
+        e cria todos os ficheiros html necessários.</p>
+        <p>Neste caso foi criado um ficheiro index que contem a pagina principal com os nomes dos filmes e o link para a
+        pagina de cada um deles. Foi também criado uma página para cada filme, com informação relativa ao mesmo.</p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> cinemaATP.json </url>  <texto> Dataset</texto> </resultado>
+        <resultado> <url> generator.py </url>  <texto> Script que lê dataset e criar os respetivos ficheiros html</texto> </resultado>
+        <resultado> <url> servidor.js</url>  <texto> Servidor</texto> </resultado>
+    </resultados>
+</doc>
