@@ -67,7 +67,6 @@ function generateStudentsList(res){
         });
 }
 
-// funcao para curso 
 function generateCourseList(res){
     page = `<body> 
                 <h2> Tabela Cursos 
@@ -104,7 +103,6 @@ function generateCourseList(res){
         });
 }
 
-// funcao para instrumentos
 function generateInstrumentsList(res){
     page = `<body> 
                 <h2> Tabela Instrumentos 
@@ -152,11 +150,9 @@ myserver = http.createServer(function(req, res) {
     else if (myurl== "/alunos"){
         generateStudentsList(res)
     }
-    // else if se for curso
     else if (myurl== "/cursos"){
         generateCourseList(res)
     }
-    // else if se for instrumentos
     else if (myurl== "/instrumentos"){
         generateInstrumentsList(res)
     }
