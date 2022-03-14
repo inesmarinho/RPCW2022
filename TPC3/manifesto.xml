@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC3 - Serviço que cria uma interface web em cima de uma API de dados </titulo>
+        <data> 2022-03-15 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, foi fornecido um dataset no formato JSON relativo a uma escola de música, com o objectivo de desenvolver um servidor que cria uma interface web em cima de uma API de dados. </p>
+        <p> Pretende-se que se recorra ao json-server. </p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> db.json </url>  <texto> Dataset</texto> </resultado>
+        <resultado> <url> escola.js</url>  <texto> Servidor</texto> </resultado>
+    </resultados>
+</doc>
