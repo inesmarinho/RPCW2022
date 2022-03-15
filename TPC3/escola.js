@@ -2,15 +2,21 @@ const http = require('http');
 const url = require('url');
 const axios = require('axios');
 
+
 function generateMainPage(){
-    page = `<body> 
+    page = `<!DOCTYPE html>
+        <html>
+            <head> 
+                <meta charset="UTF-8"/>
+            </head>
+            <body> 
                 <h1>
                     Página Principal 
                 </h1> 
                 <ul>
                     <li>
                         <a href="http://localhost:4000/alunos">
-                            Lista de Alunos
+                            Lista de Alunos 
                         </a> 
                     </li>
                     <li>
@@ -25,13 +31,18 @@ function generateMainPage(){
                     </li>
                 </ul>
             </body>
+        </html>
     `
     return page
 }
 
 function generateStudentsList(res){
-
-    page = `<body> 
+    page = `<!DOCTYPE html>
+        <html>
+            <head> 
+                <meta charset="UTF-8"/>
+            </head>
+            <body> 
                 <h2> Tabela Alunos 
                 </h2>
                 <table>
@@ -44,21 +55,22 @@ function generateStudentsList(res){
             `
     axios.get("http://localhost:3001/alunos")
         .then(function (resp) {
-            console.log("Debug 3")
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             alunos = resp.data
             alunos.forEach(a => {
                 page += `
-                        <tr>
-                            <td> ${a.id} </th>
-                            <td> ${a.nome} </th>
-                            <td> ${a.curso} </th>
-                            <td> ${a.instrumento} </th>
-                        </tr>
+                    <tr>
+                        <td> ${a.id} </th>
+                        <td> ${a.nome} </th>
+                        <td> ${a.curso} </th>
+                        <td> ${a.instrumento} </th>
+                    </tr>
                         `
             });
-            page += `   </table>
-                    </body>`
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            page += `
+                </table>
+            </body>
+        </html>`
         res.write(page)
         res.end()
         })
@@ -68,7 +80,12 @@ function generateStudentsList(res){
 }
 
 function generateCourseList(res){
-    page = `<body> 
+    page = `<!DOCTYPE html>
+        <html>
+            <head> 
+                <meta charset="UTF-8"/>
+            </head>
+            <body> 
                 <h2> Tabela Cursos 
                 </h2>
                 <table>
@@ -80,21 +97,22 @@ function generateCourseList(res){
             `
     axios.get("http://localhost:3001/cursos")
         .then(function (resp) {
-            console.log("Debug 3")
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             cursos = resp.data
             cursos.forEach(c => {
                 console.log(c)
                 page += `
-                        <tr>
-                            <td> ${c.id} </th>
-                            <td> ${c.designacao} </th>
-                            <td> ${c.duracao} </th>
-                        </tr>
+                    <tr>
+                        <td> ${c.id} </th>
+                        <td> ${c.designacao} </th>
+                        <td> ${c.duracao} </th>
+                    </tr>
                         `
             });
             page += `   </table>
-                    </body>`
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            </body>
+        </html>`
+        
         res.write(page)
         res.end()
         })
@@ -104,7 +122,12 @@ function generateCourseList(res){
 }
 
 function generateInstrumentsList(res){
-    page = `<body> 
+    page = `<!DOCTYPE html>
+        <html>
+            <head> 
+                <meta charset="UTF-8"/>
+            </head>
+            <body> 
                 <h2> Tabela Instrumentos 
                 </h2>
                 <table>
@@ -115,7 +138,7 @@ function generateInstrumentsList(res){
             `
     axios.get("http://localhost:3001/instrumentos")
         .then(function (resp) {
-            console.log("Debug 3")
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             instrumentos = resp.data
             instrumentos.forEach(i => {
                 console.log(i)
@@ -127,8 +150,8 @@ function generateInstrumentsList(res){
                         `
             });
             page += `   </table>
-                    </body>`
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            </body>
+        </html>`
         res.write(page)
         res.end()
         })
