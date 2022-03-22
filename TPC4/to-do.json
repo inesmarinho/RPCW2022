@@ -1,0 +1,25 @@
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "descricao": "Entregar TPC4",
+      "data": "2022-03-22",
+      "tipo": "Universidade",
+      "estado": "Concluída"
+    },
+    {
+      "id": "2",
+      "descricao": "Fazer manifesto",
+      "data": "2022-03-22",
+      "tipo": "Universidade",
+      "estado": "Concluída"
+    },
+    {
+      "id": "3",
+      "descricao": "Preparar TPC da próxima semana",
+      "data": "2022-03-29",
+      "tipo": "Universidade",
+      "estado": "Pendente"
+    }
+  ]
+}

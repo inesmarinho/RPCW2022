@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC4 - Realização de um to-do list</titulo>
+        <data> 2022-03-22 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, foi pedida a realização de um to-do list, dividido em 3 areas: introdução das tarefas, tarefas por fazer e tarefas realizadas. </p>
+        <p>Onde é possível editar, apagar e dar por concluída uma tarefa. </p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> to-do.json </url>  <texto> Dataset</texto> </resultado>
+        <resultado> <url> server.js</url>  <texto> Servidor e gerador das páginas</texto> </resultado>
+        <resultado> <url> static.js</url>  <texto> Serve recursos estáticos na pasta pública</texto> </resultado>
+        <resultado> <url> public</url>  <texto> Pasta que guarda o favicon e o w3.css</texto> </resultado>
+    </resultados>
+</doc>
