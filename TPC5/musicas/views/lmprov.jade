@@ -1,0 +1,15 @@
+extends layout.jade
+
+block content
+    h1 Lista de músicas da província 
+    table.w3-table.w3-bordered
+        tr
+            th.w3-center Id
+            th.w3-center Título
+        each a in musicas
+            tr 
+                td.w3-center= a.id  
+                td.w3-center= a.tit
+    hr
+    adress 
+        a(href="/musicas") Voltar à lista

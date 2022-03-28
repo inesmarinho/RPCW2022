@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC5 - Página relativa ao arq-son</titulo>
+        <data> 2022-03-29 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, apresenta-se a lista de músicas, a página especifica de cada música e ainda a lista de músicas pertencentes a cada província.<p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> arq-son.json </url>  <texto> Dataset</texto> </resultado>
+        <resultado> <url> musicas </url>  <texto> Pasta que contém toda a lógica, onde está presente o app.js, as rotas e as views </texto> </resultado>
+    </resultados>
+</doc>

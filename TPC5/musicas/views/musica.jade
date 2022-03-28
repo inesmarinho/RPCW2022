@@ -1,0 +1,19 @@
+extends layout.jade
+
+block content
+    h1 Música #{musica.id}
+    p 
+        b Id: 
+        span=musica.id
+    p
+        b Nome da música: 
+        span=musica.tit
+    p 
+        b Músico: 
+        span=musica.musico
+    p 
+        b Duração: 
+        span=musica.duracao
+    hr 
+    adress 
+        a(href="/musicas") Voltar à lista

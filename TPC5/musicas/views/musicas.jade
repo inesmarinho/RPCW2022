@@ -1,0 +1,20 @@
+extends layout.jade
+
+block content
+    h1  Lista de Músicas
+    table.w3-table.w3-bordered
+        tr
+            th.w3-center Id
+            th.w3-center Título
+            th.w3-center Província
+        each a in lmusicas
+            tr 
+                td.w3-center  
+                    a(href= "/musicas/" + a.id)= a.id
+                td.w3-center= a.tit
+                td.w3-center
+                    a(href= "/musicas/prov/" + a.prov)= a.prov
+                    
+
+ 
+  
