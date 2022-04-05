@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC6 - WebApp de ficheiros</titulo>
+        <data> 2022-04-05 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, apresenta-se uma webApp onde é possível adicionar ficheiros e consequentemente é apresentada a lista de ficheiros adicionados.<p>
+        <p>É apresentada a data do upload do ficheiro, bem como o nome, a descrição, o tamanho e o tipo de ficheiro. É ainda possível eliminar os ficheiros adicionados.</p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> app.js</url>  <texto> Servidor</texto> </resultado>
+        <resultado> <url> html-templates.js</url>  <texto> templates</texto> </resultado>
+    </resultados>
+</doc>
