@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC7 - CLAV: Classificação e Avaliação da Informação Pública</titulo>
+        <data> 2022-04-19 </data>
+        <autor>
+            <id> PG47625 </id>
+            <nome> Rosa Inês Carvalho Marinho </nome>
+        </autor>
+        <uc>
+            <sigla> RPCW2022 </sigla>
+            <designacao> Representação e Processamento de Conhecimento na Web </designacao>  
+        </uc>
+    </meta>
+
+    <resumo> 
+        <p>No presente trabalho, tem por objetivo desenvolver uma aplicaçã em nodejs que permita navegar na estrutura de classes CLAV.</p>
+        <p>A página inicial, para além de um título, CLAV e de informação de contexto sobre o que é o CLAV, contém uma lista de classes de nível 1, com o respetivo código e título; </p>
+        <p>Para cada classe é possível visualizar toda a sua informação base, bem como uma lista de descendentes, caso estes existam. Caso a classe seja de nível 3, é ainda possível ver os processos cujas relações são eCruzadoCom, eComplementarDe, eSuplementoDe e eSuplementoPara.</p>
+    </resumo>
+
+    <resultados>
+        <resultado> <url> clav</url>  <texto> Pasta criada através do express</texto> </resultado>
+        <resultado> <url> routes </url>  <texto> Pasta que contém as rotas da aplicação CLAV</texto> </resultado>
+        <resultado> <url> views </url>  <texto> Pasta que contém os ficheiros pug da aplicação CLAV </texto> </resultado>
+    </resultados>
+</doc>

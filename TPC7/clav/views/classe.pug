@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    h1 Classe #{classe.codigo}
+    p 
+        b Nível: 
+        span=classe.nivel
+    p 
+        b Título: 
+        span=classe.titulo
+    p 
+        b Descrição: 
+        span=classe.descricao
+    p 
+        b Descrição: 
+        span=classe.status
+    if(classe.filhos.length > 0)
+        h2 Descendentes
+        table.w3-table.w3-bordered
+            tr
+                th.w3-center Código
+                th.w3-center Título
+                th.w3-center Id 
+                th.w3-center Status
+            each d in classe.filhos
+                tr 
+                    td.w3-center
+                        a(href= "/classes/c" + d.codigo)= d.codigo
+                    td.w3-center= d.titulo
+                    td.w3-center= d.id 
+                    td.w3-center= d.status 
+    if(classe.nivel == 3)
+        h2 Processos relacionados 
+        table.w3-table.w3-bordered
+            tr
+                th.w3-center Código
+                th.w3-center Título
+                th.w3-center Tipo de Relacionamento
+            each p in classe.processosRelacionados
+                if p.idRel == "eCruzadoCom" || p.idRel == "eComplementarDe" || p.idRel == "eSuplementoDe" || p.idRel == "eSuplementoPara"
+                    tr 
+                        td.w3-center
+                            a(href= "/classes/c" + p.codigo)= p.codigo
+                        td.w3-center= p.titulo
+                        td.w3-center= p.idRel
+    hr
+    adress 
+        if(classe.nivel != 1)
+            a(href="/classes/c" + classe.pai.codigo) Voltar à página anterior
+        else 
+            a(href="/") Voltar à pagina inicial
+    hr
+    footer.w3-container.w3-light-grey.w3-center
+        h5 Inês Marinho | RCPW 2022
+
+            

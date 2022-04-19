@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 CLAV: Classificação e Avaliação da Informação Pública
+  p A CLAV é uma plataforma em desenvolvimento no DI/UM em parceria e sob encomenda da Direção Geral do Livro, Arquivos e Bibliotecas (DGLAB) que visa a classificação e a avaliação de toda a documentação circulante na administração pública portuguesa.
+  p Uma das faces visíveis do projeto é o catálogo dos processos da administração pública portuguesa, designado por Lista Consolidada.
+  h2 Lista de classes de nível 1 
+  table.w3-table.w3-bordered
+        tr
+            th.w3-center Código
+            th.w3-center Título
+        each c in classes
+            tr 
+                td.w3-center
+                  a(href= "/classes/c" + c.codigo)= c.codigo
+                td.w3-center= c.titulo
+  hr
+  footer.w3-container.w3-light-grey.w3-center
+    h5 Inês Marinho | RCPW 2022
