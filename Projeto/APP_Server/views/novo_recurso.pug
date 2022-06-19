@@ -1,0 +1,43 @@
+extends layout
+
+block content
+   div.container
+        h2 Novo Recurso
+        form(action='new', method='POST', enctype="multipart/form-data")
+            input(type='hidden' name='user' value= userId)
+            p
+            span.label 
+                b Título: 
+                input(type='text', name='title', value='')
+            p 
+            span.label 
+                b Tipo: 
+                select(name='tipo', value='true')
+                    option(value="null") -----
+                    option(value="testes/exames") Testes/exames
+                    option(value="slides") Slides
+                    option(value="manuais") Manuais 
+                    option(value="livros") Livros
+                    option(value="relatórios") Relatórios
+                    option(value="Tese_Mestrado") Tese Mestrado 
+                    option(value="Scripts") Scripts
+                    option(value="outros") Outros)
+            p 
+            span.label 
+                b Estado: 
+                select(name='public', value='true')
+                    option(value="true") publico
+                    option(value="false") privado
+            span.label 
+                b Data:
+                input(type='date', name='data', value='', style='margin-left: 5px 0 5px 5px')
+            p 
+            span.label 
+                b Autor:
+                input(type='text', name='author', value='')
+            p
+            span.label
+                b Documento:
+                input(type="file" name="path")
+            p
+                button(class='primary' type="submit" value="Enviar") Submeter

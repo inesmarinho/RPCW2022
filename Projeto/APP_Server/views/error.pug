@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  if message == "Cannot read properties of undefined (reading 'token')" || message == "Cannot read property 'token' of undefined"
+    h1 O seu token expirou.  
+              span=adress 
+                  a(href="/") Por favor faça login novamente.
+  else                
+    h1= message
+    h2= error.status
+    pre #{error.stack}

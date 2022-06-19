@@ -1,0 +1,45 @@
+extends layout
+
+block content
+   div.container
+      div.row 
+        h1= title
+        form(action='/', method='POST')
+         span.label  Titulo: 
+           input(type='text', name='titulo', value='')
+         span.label level: 
+                    select(name='level', value='level')
+                        option(value="null") -----
+                        option(value="testes/exames") Testes/exames
+                        option(value="slides") Slides
+                        option(value="manuais") Manuais 
+                        option(value="livros") Livros
+                        option(value="relatórios") Relatórios
+                        option(value="Tese_Mestrado") Tese Mestrado 
+                        option(value="Scripts") Scripts
+                        option(value="outros") Outros
+         // input(class="button tertiary" type="" value="search")              
+        button(class="small tertiary") search
+ 
+   table 
+      tr 
+        th Título
+        th User
+        th Classificação
+      each a in recursos
+        tr(href="http://localhost:7003/recursos/"+ a._id)
+          td
+            div.row
+              h3 
+               a(href="/recursos/"+ a._id)= a.title
+              p Data #{a.data}
+          td
+            a(href='/users/'+a.utilizador[0]._id)
+               div.row
+                  input(type="image" src=a.utilizador[0].image  width="30" height="30" )
+                  p= a.utilizador[0].username
+          td 
+            if a.classificacao.length == 0
+               p 0
+            else
+               p= a.classificacao[0].classificacao

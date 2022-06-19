@@ -1,0 +1,126 @@
+extends layout
+block content
+    script(src='/javascripts/jquery-3.6.0.min.js')
+    script(src='/javascripts/recurso_script.js')
+    if recurso.deleted == true 
+        style.
+            body {
+              background-color: gray;
+            }
+
+    div.container
+        a(href='/users/'+userData._id)
+            div.row
+                input(type="image" src=userData.image  width="30" height="30" )
+                p= userData.username
+                
+    div.container
+        div.row
+            h2= recurso.title
+            div
+                if recurso.classificacao.length == 0
+                   p Classificação: 0
+                else
+                   p Classificação: #{recurso.classificacao[0].classificacao}
+            div 
+                if recurso.deleted == true 
+                    if flagLevel == 'admin' || (flagLevel == 'dono' && flagQuemApagou=='dono')
+                    a(href="http://localhost:7003/recursos/recuperarRecurso/"+ recurso._id +"?user=" + userData._id)
+                            button(class = 'secondary') Recuperar
+                else   
+                    if flagLevel == 'admin' || flagLevel == 'dono'
+                        a(href="http://localhost:7003/recursos/deleteRecurso/"+ recurso._id +"?user=" + userData._id)
+                            button(class = 'secondary') Delete
+
+
+    div.container
+        div.row
+            p
+                b Author: 
+                | #{recurso.author}
+                if flagLevel == 'admin' || flagLevel == 'dono'
+                    button(class = 'tertiary' onclick="window.location.href = '/editAuthor/"+ recurso._id +"'") Editar
+        div.row
+            p
+                if recurso.public==true 
+                    b Estado: 
+                    | publico
+                else
+                    b Estado: 
+                    | privado
+                if flagLevel == 'admin' || flagLevel == 'dono'
+                    button(class = 'tertiary' onclick="window.location.href = '/editEstado/"+ recurso._id +"'") Editar
+
+    div.container
+        h3 Conteudos 
+    
+        div.container 
+            table
+                tr 
+                    th Nome 
+                    th  
+                each f in ficheiros 
+                    tr 
+                        td Nome: #{f}
+                        td 
+                            button(class = 'primary') Ver
+                    tr
+                tr 
+                    td Zip: #{zip_name}
+                    td
+                        button(class = 'secondary' onclick="window.location.href = 'download/"+ recurso._id +"'") Download
+
+
+    
+    if flagLevel != 'admin' && flagLevel != 'dono' && recurso.deleted == false
+        div.container
+            h3 Classificar
+            form(action='/recursos/classifica/'+recurso._id, method='POST')
+                span.label  Classificação: 
+                input(type='text', name='classificacao', value='')
+                input(class="button tertiary" type="submit" value="send")
+    
+    div.container
+       h3 Comentários
+       table
+           tr 
+           each come in comentarios
+               if come.deleted == true 
+                   //&& flagLevel == 'admin'
+                   table 
+                    tr
+                        th.deleted
+                            div.row
+                                input(type="image" src=come.utilizador[0].image  width="30" height="30" )
+                                p= come.utilizador[0].username 
+                    tr
+                        td.deleted  
+                           div
+                               p= come.comentario
+                        td.deleted  
+                           div
+                               p Apagado a: #{come.deleteDate}
+                                //a(href='/users/'+come.deleteUsers[0]._id)= come.deleteUsers[0].username
+                               //p A #{come.deleteDate}
+               else
+                table 
+                    tr
+                        th
+                            div.row
+                                input(type="image" src=come.utilizador[0].image  width="30" height="30" )
+                                p= come.utilizador[0].username   
+                                p= flagLevel    
+                    tr
+                        td   
+                            div
+                                p= come.comentario
+                        td
+                            div
+                                if flagLevel == 'admin' || come.user == navbar.id
+                                   button(class = 'secondary' onclick="window.location.href = '/comentarios/deleteComentario/"+ come._id +"?recurso=" + recurso._id + "'") Delete
+    
+    if recurso.deleted == false
+        form(action='http://localhost:7003/comentarios/'+recurso._id, method='POST')
+            span.label  Comentário: 
+            input(type='text', name='comentario', value='')
+            input(class="button tertiary" type="submit" value="send")

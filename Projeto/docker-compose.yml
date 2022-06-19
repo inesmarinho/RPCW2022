@@ -1,0 +1,32 @@
+version: "3"
+services:
+  app-server:
+    container_name: app-server
+    restart: always
+    image: arom98/app-server:final
+    ports:
+      - "7003:7003"
+  api-dados:
+    container_name: api-dados
+    restart: always
+    depends_on: 
+      - mongo
+    image: arom98/api-dados:final
+    ports:
+      - "7002:7002"
+  autenticacao:
+    container_name: autenticacao
+    restart: always
+    depends_on: 
+      - mongo
+    image: arom98/autenticacao:final
+    ports:
+      - "7001:7001"
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+volumes:
+ mongodb:

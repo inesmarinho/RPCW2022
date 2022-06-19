@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Repositório de Recursos Didáticos
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  nav 
+    h1 RRD - Repositório de Recursos Didáticos
+    
+    div.row
+      
+      button  
+        a(href='/inicio') Inicio
+      button  
+        a(href='/public') Publico
+      button  
+        a(href='/users') Utilizadores
+      button  
+        a(href='/recursos/new') Criar Recurso
+      
+      //div.col
+          a(href='/users/'+navbar.id)
+            div.row
+              input(type="image" src=navbar.image  width="80" height="80" )
+              div.col-sm-1
+                  h4= navbar.username 
+                  p= navbar.level
+    
+  body
+    block content

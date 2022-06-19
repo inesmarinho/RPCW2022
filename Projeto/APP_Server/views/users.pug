@@ -1,0 +1,26 @@
+extends layout
+block content
+    div.container
+        div.row 
+            h1 #{title}: 
+            form(action='/', method='POST')
+                span.label  username: 
+                    input(type='text', name='username', value='')
+                span.label level: 
+                    select(name='level', value='level')
+                        option(value="null") -----
+                        option(value="admin") admin
+                        option(value="producer") producer
+                        option(value="consumer") consumer 
+            input(class="button tertiary" type="submit" value="search")
+    div.container
+        each u in users
+            a(href='/users/'+u._id)
+                form(action='/users/'+ u._id, method='GET')
+                    div.row
+                        input(type="image" src=u.image  width="75" height="75" )
+                        div.col
+                            h4= u.username
+                            p= u.level
+
+        
